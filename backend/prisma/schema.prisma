@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ResumeProfile {
+  id           Int      @id @default(autoincrement())
+  name         String
+  headline     String
+  email        String
+  phone        String
+  location     String
+  linkedin     String
+  github       String
+  summary      String
+  resumePdfUrl String
+  avatarUrl    String?
+  updatedAt    DateTime @updatedAt
+}
+
+model Education {
+  id          Int      @id @default(autoincrement())
+  institution String
+  degree      String
+  dates       String
+  grade       String?
+  description String
+  website     String?
+  image       String?
+  @@index([institution])
+}
+
+model Experience {
+  id               Int      @id @default(autoincrement())
+  company          String
+  jobTitle         String
+  dates            String
+  location         String
+  durationLabel    String?
+  responsibilities String[]
+  technologies     String[]
+  keyLearnings     String?
+  about            String?
+  industry         String?
+  employees        String?
+  headquarters     String?
+  website          String?
+  logo             String?
+  @@index([company])
+}
+
+model Project {
+  id           Int      @id @default(autoincrement())
+  title        String
+  description  String
+  technologies String[]
+  githubUrl    String?
+  liveUrl      String?
+  thumbnail    String?
+  highlights   String[]
+  year         String?
+  @@index([title])
+}
+
+model Skill {
+  id       Int    @id @default(autoincrement())
+  category String @unique
+  items    String[]
+}
+
+model SocialLink {
+  id    Int    @id @default(autoincrement())
+  label String
+  url   String
+  icon  String?
+}
