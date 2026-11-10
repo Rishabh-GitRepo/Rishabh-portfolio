@@ -11,7 +11,7 @@ export const resume: Resume = {
     github: 'https://github.com/rishabhpandey',
     summary:
       'Software Engineer with 2 years of experience at Accenture in the banking domain. Built scalable front-end and back-end systems using React.js, Node.js, and PostgreSQL. Passionate about building scalable web applications and solving real-world problems.',
-    resumePdfUrl: '/resume.pdf',
+    resumePdfUrl: '/Rishabh_Kumar_Pandey_Resume.pdf',
   },
   education: [
     {

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import { ExternalLink } from './ExternalLink';
 import type { Profile } from '../types';
 
@@ -8,18 +8,25 @@ type Props = {
   onNav: (v: string) => void;
 };
 
-const NAV = ['Resume', 'Projects', 'Experience', 'Education', 'Skills', 'Contact'];
+const NAV = ['Resume', 'Projects', 'Experience', 'Education', 'Skills'];
 
 export function TopBar({ profile, activeNav, onNav }: Props) {
   return (
     <header className="topbar">
-      <div className="brand">
+      <a
+        className="brand"
+        href="#section-resume"
+        onClick={event => {
+          event.preventDefault();
+          onNav('Resume');
+        }}
+      >
         <div className="avatar" aria-hidden>{profile.name.charAt(0)}</div>
         <div>
           <div className="name">{profile.name}</div>
           <div className="headline">{profile.headline}</div>
         </div>
-      </div>
+      </a>
       <nav className="nav-pills" aria-label="Sections">
         {NAV.map(n => (
           <button
@@ -33,6 +40,7 @@ export function TopBar({ profile, activeNav, onNav }: Props) {
         ))}
       </nav>
       <div className="top-icons">
+        <ExternalLink href={profile.resumePdfUrl} aria-label="Download resume" download><Download size={16} /></ExternalLink>
         <ExternalLink href={profile.github} aria-label="GitHub"><Github size={18} /></ExternalLink>
         <ExternalLink href={profile.linkedin} aria-label="LinkedIn"><Linkedin size={18} /></ExternalLink>
         <ExternalLink href={`mailto:${profile.email}`} aria-label="Email"><Mail size={18} /></ExternalLink>

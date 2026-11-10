@@ -1,4 +1,4 @@
-import { Github, Globe2 } from 'lucide-react';
+import { Code2, Github, Globe2 } from 'lucide-react';
 import type { Project } from '../types';
 import { ExternalLink } from './ExternalLink';
 
@@ -11,6 +11,10 @@ export function ProjectDetails({ data }: { data: Project }) {
           <h2>{data.title}</h2>
           <div className="subtitle">{data.technologies.join(' · ')}</div>
         </div>
+      </div>
+      <div className="project-preview" role="img" aria-label={`${data.title} project preview`}>
+        {data.thumbnail ? <img src={data.thumbnail} alt="" /> : <Code2 size={34} />}
+        {!data.thumbnail && <span>{data.title}</span>}
       </div>
       <p>{data.description}</p>
       <h3>Highlights</h3>

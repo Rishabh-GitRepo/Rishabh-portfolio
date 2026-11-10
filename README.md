@@ -42,7 +42,7 @@ Docker is still needed for the PostgreSQL service, unless you have a local Postg
 
 ## Run the frontend locally
 
-With the backend available on port `4000`, copy `frontend/.env.example` to `frontend/.env`, then open another terminal:
+With the backend available on port `4000`, open another terminal:
 
 ```sh
 cd frontend
@@ -50,4 +50,4 @@ npm ci
 npm run dev
 ```
 
-Open the Vite URL shown in the terminal (typically `http://localhost:5173`).
+Open the Vite URL shown in the terminal (typically `http://localhost:5173`). Vite proxies `/api` requests to the backend, so the browser does not need to make a cross-origin request.

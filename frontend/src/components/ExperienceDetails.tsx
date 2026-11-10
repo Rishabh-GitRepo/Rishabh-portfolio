@@ -12,7 +12,9 @@ export function ExperienceDetails({ data }: { data: Experience }) {
   return (
     <div className="exp-details">
       <div className="exp-header">
-        <div className="exp-logo"><Building2 size={22} /></div>
+        <div className="exp-logo" aria-label={`${data.company} logo`}>
+          {data.logo ? <img src={data.logo} alt="" /> : <span>{data.company.slice(0, 1)}</span>}
+        </div>
         <div>
           <div className="eyebrow">WORK EXPERIENCE</div>
           <h2>{data.company}</h2>
