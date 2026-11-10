@@ -1,53 +1,30 @@
-# Rishabh Portfolio
+# Interactive Resume-First Portfolio
 
-A portfolio website with a React frontend and an Express API backed by PostgreSQL and Prisma.
+Responsive personal portfolio that combines the simplicity and familiarity of a traditional Indian resume with the interactivity of a modern web application. Visitors see a conventional resume on the left and an interactive, contextual details panel on the right.
 
-## Run the full application with Docker
+The idea: A resume that doesn't just list information — it lets people explore the story behind it.
 
-1. Copy `.env.example` to `.env` in the project root. Update the PostgreSQL values if needed.
-2. From the project root, start the stack:
+**Live Demo:** [https://your-portfolio-link.com](https://your-portfolio-link.com)
 
-   ```sh
-   docker compose up --build
-   ```
+## ✨ Features
 
-   Compose starts PostgreSQL, builds the backend and frontend, applies the Prisma schema, and seeds the portfolio data when the backend starts. The seed skips databases that already contain a resume profile.
-3. Open the site at `http://localhost:5173`. The API is available at `http://localhost:4000`; check `http://localhost:4000/api/health`.
+- **Resume-First Layout:** Clean, printable, conventional resume layout (left panel) designed for recruiters.
+- **Interactive Contextual Preview:** Hovering or clicking any section (Education, Experience, Projects, Skills, Contact) updates the right panel with rich details.
+- **Click-to-Pin:** Click a section to keep the preview open while moving the mouse to click links.
+- **Company & Project Deep Dives:** Displays tech stacks, responsibilities, key learnings, GitHub repos, live links, and company metadata.
+- **PDF Download:** Direct download link for the resume PDF.
+- **Responsive:** Adapts to tablets and mobile devices with a friendly warning for optimal viewing.
+- **Accessible:** Keyboard navigable, ARIA compliant, and includes reduced-motion support.
+- **Full-Stack:** React, TypeScript, Node.js, Express, PostgreSQL, Prisma, and Docker.
 
-Stop the stack with `docker compose down`. To also remove the database volume and its data, use `docker compose down -v`.
+## 🛠 Tech Stack
 
-## Run the backend locally
+| Layer | Technology |
+|-------|------------|
+| **Frontend** | React 18, TypeScript, Vite, CSS Modules, Lucide React |
+| **Backend** | Node.js, Express.js, TypeScript, Zod, Prisma ORM |
+| **Database** | PostgreSQL 16 |
+| **Infrastructure** | Docker, Docker Compose, Nginx (production) |
+| **Testing** | Vitest, React Testing Library, Supertest |
 
-Docker is still needed for the PostgreSQL service, unless you have a local PostgreSQL server available.
-
-1. Copy `.env.example` to `.env` in the project root and start the database:
-
-   ```sh
-   docker compose up -d db
-   ```
-
-2. Copy `backend/.env.example` to `backend/.env`.
-3. In a terminal, install the backend dependencies and prepare the database:
-
-   ```sh
-   cd backend
-   npm ci
-   npm run db:generate
-   npm run db:push
-   npm run db:seed
-   npm run dev
-   ```
-
-   The API listens on port `4000`. For a production build, run `npm run build` followed by `npm start`.
-
-## Run the frontend locally
-
-With the backend available on port `4000`, open another terminal:
-
-```sh
-cd frontend
-npm ci
-npm run dev
-```
-
-Open the Vite URL shown in the terminal (typically `http://localhost:5173`). Vite proxies `/api` requests to the backend, so the browser does not need to make a cross-origin request.
+---
