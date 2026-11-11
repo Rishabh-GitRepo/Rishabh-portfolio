@@ -25,7 +25,7 @@ async function main() {
   await prisma.resumeProfile.create({
     data: {
       name: 'Rishabh Kumar Pandey',
-      headline: 'Full-Stack Engineer | React.js | Node.js | TypeScript',
+      headline: 'Full-Stack Engineer | React.js | Node.js | TypeScript | Immediate Joiner',
       email: 'rishavforjobs22@gmail.com',
       phone: '+91 86175 88984',
       location: 'Pune, India',
@@ -67,63 +67,53 @@ async function main() {
   await prisma.project.createMany({
     data: [
       {
-        title: 'AI Interview Coach',
+        title: 'E-Cart- E-Commerce Shopping Site',
         description:
-          'Building a cross-platform desktop interview coach using Tauri and Rust - fully offline-capable with no cloud dependency for core AI functions. Engineered a local AI pipeline combining Whisper.cpp (STT), Ollama (LLM), Silero VAD (voice detection), and Piper (TTS) for end-to-end offline speech processing and AI-driven interview interaction.',
-        technologies: ['Tauri', 'Rust', 'TypeScript', 'Whisper.cpp', 'Ollama', 'Silero VAD', 'Piper', 'MediaPipe', 'Groq/Gemini'],
+          'E-Cart is a modern, full‑stack multi‑vendor e‑commerce platform built with the latest technologies. It features role‑based workflows for Customers, Sellers, and Admins and promotes rapid development, scalable architecture, and a friendly developer experience.',
+        technologies: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'React Router', 'Axios', 'Node.js', 'Express 5', 'MongoDB', 'Mongoose', 'JWT (access + refresh tokens)', 'bcrypt', 'RESTful API'],
         highlights: [
-          'Fully offline-capable with no cloud dependency for core AI functions.',
-          'Integrated MediaPipe with Groq/Gemini for real-time behavioral and facial analysis.',
+          'Architected a monorepo full-stack app — React 19 + Vite + Tailwind CSS frontend, Express 5 + TypeScript backend, MongoDB/Mongoose ODM',
+          'Implemented secure JWT-based authentication with access + refresh tokens, bcrypt hashing, and role-based route guards (Customer/Seller/Admin)',
+          'Designed RESTful API (~40 endpoints) covering products, cart, orders, reviews, categories, and admin/seller management',
+          'Built a category-based commission engine with quantity thresholds, applied at order time or on COD payment confirmation',
+          'Developed multi-role workflows — seller approval system, seller data isolation, admin analytics, and COD payment state tracking',
         ],
-        year: 'Active Development',
-        githubUrl: 'https://github.com/Rishabh-GitRepo/ai-interview-coach',
+        year: 'Past Project',
+        githubUrl: 'https://github.com/Rishabh-GitRepo',
       },
-      {
-        title: 'AI Tutor - Real-Time Learning Platform',
+        {
+        title: 'Interactive Resume-First Personal Portfolio',
         description:
-          'Building a real-time AI-assisted learning platform with a React.js/Next.js frontend and Node.js backend. Implemented live sessions using Socket.IO for interactive learning.',
-        technologies: ['React.js', 'Next.js', 'Node.js', 'Socket.IO'],
+          'Developing a responsive, interactive personal portfolio that combines a traditional resume layout with a dynamic contextual preview panel, allowing recruiters to explore professional experience, education, projects, and technical skills without navigating away from the page.',
+        technologies: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'Prisma ORM', 'Docker', 'CSS', 'REST APIs.'],
         highlights: [
-          'Applied code splitting and lazy loading to reduce initial load time by ~30%.',
+          'Designed a responsive two-column interface with an interactive resume and dynamic details panel',
+          'Implemented hover and click interactions to display contextual information about education, professional experience, and projects.',
+          'Integrated GitHub repositories, live project previews, LinkedIn profiles, and external links.',
+          'Developed REST APIs using Node.js and Express.js to manage structured resume information.',
+          'Designed relational database models using PostgreSQL and Prisma ORM.',
+          'Containerized frontend, backend, and database services using Docker Compose.',
+          'Implemented responsive layouts, accessible interactions, and downloadable PDF resume functionality.',
         ],
-        year: 'Active Development',
-        githubUrl: 'https://github.com/Rishabh-GitRepo/ai-tutor',
+        year: 'Nov 2026',
+        githubUrl: 'https://github.com/Rishabh-GitRepo/Rishabh-portfolio',
       },
       {
-        title: 'Real-Time Chatbot',
+        title: 'LetsTalk-Discord-Like Real-Time Chat Platform',
         description:
-          'Customer support chat application with real-time message delivery, read receipts, and persistent chat history.',
-        technologies: ['React.js', 'Node.js', 'WebSockets'],
-        highlights: ['Real-time delivery', 'Persistence using MongoDB'],
-        year: 'Past Project',
-        githubUrl: 'https://github.com/Rishabh-GitRepo', // Replace with exact link if available
-      },
-      {
-        title: 'Performance Optimizer',
-        description:
-          'A React.js application focused on maximizing performance through advanced Webpack and Babel configurations.',
-        technologies: ['React.js', 'TypeScript', 'Webpack', 'Babel'],
-        highlights: ['Implemented lazy loading and code splitting', 'Reduced load time by ~30%'],
-        year: 'Past Project',
-        githubUrl: 'https://github.com/Rishabh-GitRepo',
-      },
-      {
-        title: 'Auth System',
-        description:
-          'Secure authentication and authorization system supporting OAuth 2.0 and JWT tokens.',
-        technologies: ['React.js', 'Node.js', 'JWT', 'OAuth 2.0', 'MongoDB'],
-        highlights: ['Role-based access control', 'Session management'],
-        year: 'Past Project',
-        githubUrl: 'https://github.com/Rishabh-GitRepo',
-      },
-      {
-        title: 'Microservices Pipeline',
-        description:
-          'CI/CD pipeline for deploying microservices with zero-downtime releases.',
-        technologies: ['Docker', 'Kubernetes', 'Jenkins', 'GitLab CI'],
-        highlights: ['Blue-green deployment', 'Zero-downtime releases'],
-        year: 'Past Project',
-        githubUrl: 'https://github.com/Rishabh-GitRepo',
+          'A production-inspired, microservices-based real-time chat application built with TypeScript, React, and Node.js. Features group chats, channels, real-time messaging, presence indicators (online/offline/typing), and horizontal scalability.',
+        technologies: ['TypeScript', 'Node.js', 'Fastify', 'React', 'PostgreSQL', 'Prisma', 'Redis', 'RabbitMQ', 'Socket.IO', 'Docker', 'GitHub Actions'],
+        highlights: ['Microservices architecture — 7 independently deployable services',
+          'Real-time messaging — WebSocket gateway with reconnect-and-catch-up',
+          'Distributed presence — online/offline/typing via Redis TTL keys',
+          'Reliable event delivery — transactional outbox pattern over RabbitMQ',
+          'Stateless auth — JWT access + rotated refresh tokens with reuse detection',
+          'Horizontal scaling — 2+ WebSocket replicas with Redis pub/sub adapter',
+          'Observability — structured logs, Prometheus metrics, Grafana dashboards',
+          'CI/CD — GitHub Actions → SSH deploy → Oracle Cloud VM',
+          'Full-stack TypeScript — end-to-end type safety via shared contracts'],
+        year: 'Oct 2026',
+        githubUrl: 'https://github.com/Rishabh-GitRepo/LetsTalk',
       }
     ],
   });
