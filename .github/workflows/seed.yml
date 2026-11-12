@@ -1,0 +1,24 @@
+name: Seed Database
+on:
+  workflow_dispatch: # Allow manual triggering
+  push:
+    branches: [main]
+    paths: ['backend/prisma/seed.ts'] # Trigger only when seed file is modified
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: cd backend && npm install
+      - name: Push schema and seed
+        run: |
+          cd backend
+          npx prisma db push
+          npx prisma db seed
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
